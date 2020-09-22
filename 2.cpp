@@ -1,3 +1,19 @@
+// bagian A
+// ------------------------------------------------
+// pseudo code
+// Init ports and variables
+// Read Temp from the analog sensor
+// InitReference Temp
+// COMPARE REF WITH CURRENT
+// if current Temp is greater than ref Temp, Switch ON Actuator
+// If current Temp is less than ref Temp, Switch Off Actuator
+
+
+
+
+
+//bagian B
+// _______________________________
 
 // Where devices are connected
 // led bit 0 port a
@@ -61,7 +77,7 @@ double readTemperature()
 {
 	//read temperature from ADC
 	int adcVal;
-	float volt;
+	float mV;
 	double temp;
 
 	adcVal = GetAdcValue(0);	  //read from channel 0
@@ -127,7 +143,7 @@ void main(void)
 	while (true)
 	{
 		// logic to control temperature belong here
-		if(currentTemp <= refTemp){
+		if(currentTemp >= refTemp){
 			setActuator(true);
 			
 		}
